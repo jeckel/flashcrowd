@@ -1,0 +1,12 @@
+FROM golang
+
+# https://github.com/pilu/fresh
+
+COPY ./src /go/src/github.com/jeckel/flashcrowd/src
+WORKDIR /go/src/github.com/jeckel/flashcrowd/src
+
+RUN go get ./
+RUN go build
+
+CMD go get github.com/pilu/fresh && \
+	    fresh; \

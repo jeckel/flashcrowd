@@ -1,0 +1,13 @@
+version: '3'
+services:
+  crowd-sourcing:
+    build:
+      dockerfile: Dockerfile.dev
+      context: .
+#      args:
+#        BINARY: crowdsourcing
+    env_file: .env
+    volumes:
+      - ./src:/go/src/github.com/jeckel/flashcrows/src
+    working_dir: /go/src/github.com/jeckel/flashcrows/src
+#    command: bin/crowdsourcing
